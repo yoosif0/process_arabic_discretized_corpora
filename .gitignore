@@ -2,3 +2,4 @@
 *.xls
 *.csv
 a.py
+__pycache__/
