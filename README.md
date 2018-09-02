@@ -1,14 +1,25 @@
+# Process arabic corpora for pronouncing dictionary
 
-## Tashkeela
-* Add tashkeela to the root folder and rename the tashkeela folder "tashkeela-raw"
-* Add an empty folder called "tashkeela"
-    * This is the output for stripping and tokenizing
-* Strip and tokenize by following the commands in "Strip and tokenize using pyArabic.ipynb"
-    * Watch files change one by one in tashkeela folder
-* Combine all files into one by following the commands in "Combine all files into one.ipynb"
-    * Take care that you might overrite the "output.txt" file there so you could rename the output file for example to "output_with_last_haraka.txt"
+## Pre-usage
+
+#### Tashkeela
+* Add corpus in a folder named "tashkeela-raw" in the root folder
+
+#### Nawar's Halabi Corpus
+* Add corpus in a folder named "tashkeela-raw" in the root folder
+
+#### Kasct Corpus
+* Add corpus in a folder named "kasct-raw" in the root folder 
+* Open both files and in VS Code
+    * Reopen with encoding "Arabic Windows(1256)"
+    * Save with encoding "utf-8"
+
+## Usage
+* python .\process_corpus.py --corpus nawar
+* python .\process_corpus.py --corpus kasct
+* python .\process_corpus.py --corpus tashkeela
+* python .\concat_corpora.py 
 
 
-## Nawar's Halabi Corpus
-* Add the temp.csv file to the root folder and rename it to nawar.csv
-* `python process_nawar_corpus_as_text`
+## Post Usage
+* Use ara pronounciaiton tool to produce the dict file using `python corpus2cmudict.py -i output_with_last_haraka.txt -p haraka`

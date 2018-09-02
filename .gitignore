@@ -1,5 +1,6 @@
 *.txt
 *.xls
 *.csv
-a.py
+*.transcription
+*.dic
 __pycache__/
